@@ -1,0 +1,13 @@
+First sequence
+
+AAACCTCACTCACCACTGCC
+
+
+second sequence
+
+AATAAGGGGTCCTTACCTGA
+
+
+third sequence
+
+AGAATAAGTGTCAGCCAGTG
