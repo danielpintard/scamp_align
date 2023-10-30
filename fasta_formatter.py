@@ -23,7 +23,7 @@ fasta_list = []
 
 for sublist in indiv_seqs:
     if sublist: #is not empty
-        sublist[0] = ">" + sublist[0]
+        sublist[0] = ">" + sublist[0].replace(':', '').replace(' ', '_')
         fasta_list.append(sublist)
     
 #joining elements of sequence to make one losng string for sequences
@@ -37,7 +37,7 @@ with open(output_file, "w") as output:
         header = sublist[0]
         sequence = sublist[1]
         output.write(header + "\n")
-        output.write(sequence + "\n")
+        output.write(sequence + "\n" + '\n')
     
 
 # Potential Improvements #
@@ -57,7 +57,7 @@ with open(output_file, "w") as output:
     AGAATAAGTGTCAGCCAGTG
     -------------------
     
-    It would be nice to always have it return:
+    It would be nice to always have the program return:
     ------------------
     First sequence
 
