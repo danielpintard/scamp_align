@@ -37,39 +37,39 @@ with open(output_file, "w") as output:
         header = sublist[0]
         sequence = sublist[1]
         output.write(header + "\n")
-        output.write(sequence + "\n" + '\n')
+        output.write(sequence.replace(' ', '') + "\n" + '\n')
     
 
 # Potential Improvements #
-    """
-    I should refactor for following edge case:
-    ------------------
-    First sequence
-    
-    AAACCTCACTCACCACTGCC
+"""
+I should refactor for following edge case:
+------------------
+First sequence
 
-    second sequence
+AAACCTCACTCACCACTGCC
 
-    AATAAGGGGTCCTTACCTGA
+second sequence
 
-    third sequence
+AATAAGGGGTCCTTACCTGA
 
-    AGAATAAGTGTCAGCCAGTG
-    -------------------
-    
-    It would be nice to always have the program return:
-    ------------------
-    First sequence
+third sequence
 
-    AAACCTCACTCACCACTGCC
+AGAATAAGTGTCAGCCAGTG
+-------------------
 
-    second sequence
-    AATAAGGGGTCCTTACCTGA
+It would be nice to always have the program return:
+------------------
+First sequence
 
-    third sequence
-    AGAATAAGTGTCAGCCAGTG
-    -------------------
-    
-    regardless of the amount of space between ID and sequence because that is a part of fasta format. This wouldn't be a fasta formatter if it didnt turn every txt file with sequences into a
-    viable fasta file. I can expand this to cover many other files (rtf's and any file that are IOwrapped with hidden text may be as pain in the ass)
-    """
+AAACCTCACTCACCACTGCC
+
+second sequence
+AATAAGGGGTCCTTACCTGA
+
+third sequence
+AGAATAAGTGTCAGCCAGTG
+-------------------
+
+regardless of the amount of space between ID and sequence because that is a part of fasta format. This wouldn't be a fasta formatter if it didnt turn every txt file with sequences into a
+viable fasta file. I can expand this to cover many other files (rtf's and any file that are IOwrapped with hidden text may be as pain in the ass)
+"""
